@@ -1,3 +1,5 @@
+#!/bin/python3
+
 # BS'D
 # TODO
 #- main.py
@@ -6,10 +8,11 @@
 #    - durations, loop, resize, color, gradient
 #    - type (rgba, rgb, greyscale)
 
+import sys
 import numpy as np
 from PIL import Image, ImageSequence
 
-im = Image.open('samples/test1.gif')
+im = Image.open(sys.argv[1])
 length = len(list(ImageSequence.Iterator(im)))
 height, width = np.array(im).shape
 step = int(round(width / length))
@@ -23,10 +26,10 @@ for frame in ImageSequence.Iterator(im):
     i+=1
 
 frames[0].save(
-        "output.gif",
+        sys.argv[2],
         save_all=True,
         append_images=frames[1:],
-        duration=100,
+        duration=50,
         loop=0
         )
 
