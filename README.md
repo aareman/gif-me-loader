@@ -1,4 +1,7 @@
 # gif-me-loader
+
+[![PyPI version](https://badge.fury.io/py/gifmeloader.svg)](https://badge.fury.io/py/gifmeloader)
+
 A simple utility for adding progressbars to GIF images.
 
 # Installation
